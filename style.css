@@ -107,6 +107,9 @@ textarea{
     background-color: #f0932b;
     background-color: #4ECDC4;
     /* background-color: #b4b4d0; */
+    background: #4ECDC4; 
+    background: -webkit-linear-gradient(to left, #556270, #4ECDC4);
+    background: linear-gradient(to left, #556270, #4ECDC4);
     color: #fff;
     border-radius: 50px;
     padding: 10px 20px;
@@ -117,4 +120,6 @@ textarea{
 
 .tag.highlight{
     background-color: #273c75;
+    background: -webkit-linear-gradient(to right, #273c75, #273c75);
+    background: linear-gradient(to right, #273c75, #273c75);
 }
