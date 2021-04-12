@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: lightgray;
+    background-color: #f1f1f6;
+    background-color: #757D8A;
+    /* background-color: #fff; */
+    font-family: 'Muli', sans-serif;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+header {
+    /* background-color: rgba(255,255,255, 1);
+    background-color: #E8CBC0; 
+    background: -webkit-linear-gradient(to right, #636FA4, #E8CBC0); 
+    background: linear-gradient(to right, #636FA4, #E8CBC0);  */
+
+    background: #4ECDC4; 
+    /* background: -webkit-linear-gradient(to right, #556270, #4ECDC4);  */
+    background: -webkit-linear-gradient(to left, #556270, #4ECDC4);
+    /* background: linear-gradient(to right, #556270, #4ECDC4); */
+    background: linear-gradient(to left, #556270, #4ECDC4);
+
+    /* background-color: #282831; */
+    
+    
+    
+}
+header .container{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+    color: #fff;
+    
+}
+header h3{
+    font-size: 20px;
+    font-weight: bolder;
+}
+header nav{
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+header nav li {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+main .container {
+    width: 85%;
+    min-height: 350px;
+    margin: auto;
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid lightgray;
+    background-color: #f1f1f6;
+    /* background: #f5f7fa; */
+}
+.wrapper{
+    padding: 30px;
+    
+}
+.wrapper h1{
+    color: #2141a5;
+}
+textarea{
+    border: 1px solid lightgray;
+    display: block;
+    width: 100%;
+    height: 100px;
+    font-family: inherit;
+    padding: 10px;
+    /* margin: 0 0 20px; */
+    margin-top: 35px;
+    font-size: 16px;
+}
+.container button{
+    margin-top: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: #4ECDC4;
+    background-color: #556270;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+#tags{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid lightgray;
+    padding: 50px;
+    flex: 0.85;
+    background-color: #556270;
+    /* background-color: #282831; */
+    /* background-color: #b4b4d0; */
+}
+.tag {
+    background-color: #f0932b;
+    background-color: #4ECDC4;
+    /* background-color: #b4b4d0; */
+    color: #fff;
+    border-radius: 50px;
+    padding: 10px 20px;
+    margin: 0 5px 10px 0;
+    font-size: 18px;
+
+}
+
+.tag.highlight{
+    background-color: #273c75;
+}
