@@ -1,4 +1,5 @@
 const tagsEl = document.getElementById('tags')
+// const tagsEl = document.getElementById('tag')
 const textarea = document.getElementById('textarea')
 const randomBtn = document.getElementById('random')
 const resetBtn = document.getElementById('reset')
@@ -12,11 +13,14 @@ textarea.addEventListener('keyup', (e) => {
 
     if(e.key === 'Enter'){
         setTimeout(() => {
-            // e.target.value = ''
+            e.target.value = ''
         }, 10)
 
         randomSelect()
     }
+    // addBtn.addEventListener('click', () => {
+    //     e.target.value = ''
+    // })
 })
 
 randomBtn.addEventListener('click',() =>{
@@ -25,53 +29,47 @@ randomBtn.addEventListener('click',() =>{
     }, 10)
 })
 
-resetBtn.addEventListener('click', (e) => {
-    createTags(e.target.value)
+resetBtn.addEventListener('click', () => {
+    // createTags(e.target.value)
 
-    e.target.value = '';
-    textarea.innerHTML = '';
-    tagsEl.innerHTML = '';
+    // // e.target.value = '';
+    // // textarea.innerHTML = '';
+    // // tagsEl.innerHTML = '';
+
+    // // textarea.value='';
+
+    window.location.reload()
 })
 
+// addBtn.addEventListener('click', () => {
+    
+// })
 function createTags(input) {
-    
-    // addBtn.addEventListener('click', () => {
-    //     const space = " ";
-    //     const tags = input.split(space).filter(tag => tag.trim() !== '').map(tag => tag.trim())
 
-    //     tagsEl.innerHTML = ''
-
-    //     tags.forEach(tag => {
-    //     const tagEl = document.createElement('span')
-    //     tagEl.classList.add('tag')
-    //     tagEl.innerText = tag
-    //     tagsEl.appendChild(tagEl)
-    //     })
-    // })
-
-    
-
-    const tags = input.split(',').filter(tag => tag.trim() !== '').map(tag => tag.trim())
-
-    addTask(tags)
-    
-    tagsEl.innerHTML = ''
-
-    tags.forEach(tag => {
-       const tagEl = document.createElement('span')
-       tagEl.classList.add('tag')
-       tagEl.innerText = tag
-       tagsEl.appendChild(tagEl)
-    })
-}
-
-function addTask(input){
     addBtn.addEventListener('click', () => {
-        console.log(input)
-        input.innerHTML = `${input} + ,`;
-    })
-}
 
+        // textarea.value='';
+
+        const tags = input.split(',').filter(tag => tag.trim() !== '').map(tag => tag.trim())
+        tagsEl.innerHTML = '';
+
+        // input = input.split(',').filter(tag => tag.trim() !== '').map(tag => tag.trim())
+        // let tagArr = [];
+        // tagArr.push(input.replace(/\n/g, ""));
+
+        tagsEl.innerHTML = '';
+        // textarea.value='';
+
+        
+        tags.forEach(tag => {
+            const tagEl = document.createElement('span')
+            tagEl.classList.add('tag')
+            tagEl.innerText = tag
+            tagsEl.appendChild(tagEl)
+        })
+    })
+    
+}
 
 function randomSelect() {
     const times = 30

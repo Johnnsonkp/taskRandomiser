@@ -86,7 +86,9 @@ textarea{
     display: flex;
     flex-direction: column;
     border: 1px solid lightgray;
-    padding: 50px;
+    padding-top: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
     flex: 0.85;
     background-color: #556270;
 }
