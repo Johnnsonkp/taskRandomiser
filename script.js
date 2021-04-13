@@ -49,7 +49,11 @@ function createTags(input) {
     //     })
     // })
 
+    
+
     const tags = input.split(',').filter(tag => tag.trim() !== '').map(tag => tag.trim())
+
+    addTask(tags)
     
     tagsEl.innerHTML = ''
 
@@ -61,6 +65,14 @@ function createTags(input) {
     })
 }
 
+function addTask(input){
+    addBtn.addEventListener('click', () => {
+        console.log(input)
+        input.innerHTML = `${input} + ,`;
+    })
+}
+
+
 function randomSelect() {
     const times = 30
 
@@ -68,6 +80,7 @@ function randomSelect() {
         const randomTag = pickRandomTag()
 
         highlightTag(randomTag)
+
 
         setTimeout(() => {
             unHighlightTag(randomTag)
@@ -81,6 +94,8 @@ function randomSelect() {
             const randomTag = pickRandomTag()
 
             highlightTag(randomTag)
+
+            completedTask(randomTag)
         }, 100)
 
     }, times * 100)
@@ -88,20 +103,10 @@ function randomSelect() {
 
 function pickRandomTag() {
     const tags = document.querySelectorAll('.tag')
-    const randomTag = tags[Math.floor(Math.random() * tags.length)]
-
-    // console.log(randomTag);
-
-    // const index = tags.indexOf(randomTag);
-    // tags.splice(index, 1)
-
-    indexCheck(randomTag)
-
-    return randomTag
-
-    // completedTask(randomTag);
-
+    return tags[Math.floor(Math.random() * tags.length)];
+    
 }
+
 
 function indexCheck(input){
     const tags = document.querySelectorAll('.tag');
@@ -113,7 +118,9 @@ function indexCheck(input){
 
 function completedTask(input) {
     completeBtn.addEventListener('click', () => {
-        input.style.textDecoration = "underline overline";
+        input.innerHTML=`<del>${input.innerHTML}</del>`;
+        input.classList.add('disabled');
+
     })
 }
 
