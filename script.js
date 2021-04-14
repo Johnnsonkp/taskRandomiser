@@ -50,8 +50,8 @@ function createTags(input) {
 
         // textarea.value='';
 
-        const tags = input.split(',').filter(tag => tag.trim() !== '').map(tag => tag.trim())
-        tagsEl.innerHTML = '';
+        const tags = input.split('.').filter(tag => tag.trim() !== '').map(tag => tag.trim())
+        // tagsEl.innerHTML = '';
 
         // input = input.split(',').filter(tag => tag.trim() !== '').map(tag => tag.trim())
         // let tagArr = [];
@@ -64,7 +64,7 @@ function createTags(input) {
         tags.forEach(tag => {
             const tagEl = document.createElement('span')
             tagEl.classList.add('tag')
-            tagEl.innerText = tag
+            tagEl.innerText = tag 
             tagsEl.appendChild(tagEl)
         })
     })
