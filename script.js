@@ -56,8 +56,8 @@ function createTags(input) {
         // input = input.split(',').filter(tag => tag.trim() !== '').map(tag => tag.trim())
         // let tagArr = [];
         // tagArr.push(input.replace(/\n/g, ""));
-
-        tagsEl.innerHTML = '';
+        
+        tagsEl.innerHTML = '<h2 class="h2">Tasks:</h2>';
         // textarea.value='';
 
         

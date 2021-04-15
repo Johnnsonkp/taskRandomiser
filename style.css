@@ -64,6 +64,10 @@ main .container {
     margin-left: 90px;
     background-color: #4ECDC4;
 }
+.wrapper small{
+    color: red;
+    margin-bottom: 0px;
+}
 textarea{
     border: 1px solid lightgray;
     display: block;
@@ -71,7 +75,7 @@ textarea{
     height: 200px;
     font-family: inherit;
     padding: 10px;
-    margin-top: 35px;
+    margin-top: 15px;
     font-size: 16px;
 }
 .container button{
@@ -96,7 +100,7 @@ textarea{
     flex: 0.85;
     background-color: #556270;
 }
-#tags h2{
+#tags .h2{
     color: #fff;
 }
 .tag {
