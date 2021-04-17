@@ -119,6 +119,12 @@ textarea{
     background-color: #273c75;
     background: -webkit-linear-gradient(to right, #273c75, #273c75);
     background: linear-gradient(to right, #273c75, #273c75);
+
+    background-color: #fff;
+    background: -webkit-linear-gradient(to right, #fff, #fff);
+    background: linear-gradient(to right, #fff, #fff);
+    color: black;
+
 }
 
 .disabled{
@@ -126,4 +132,5 @@ textarea{
     background: -webkit-linear-gradient(to right, rgba(16, 16, 16, 0.3), #556270) !important;
     background: linear-gradient(to right, rgba(16, 16, 16, 0.3), #556270) !important;
     color: rgba(255, 255, 255, 0.3) !important;
+    transform: scaleX(1);
 }

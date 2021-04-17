@@ -1,5 +1,4 @@
 const tagsEl = document.getElementById('tags')
-// const tagsEl = document.getElementById('tag')
 const textarea = document.getElementById('textarea')
 const randomBtn = document.getElementById('random')
 const resetBtn = document.getElementById('reset')
@@ -10,18 +9,14 @@ textarea.focus()
 
 textarea.addEventListener('keyup', (e) => {
     createTags(e.target.value)
-
     if(e.key === 'Enter'){
         setTimeout(() => {
             e.target.value = ''
         }, 10)
-
         randomSelect()
     }
-    // addBtn.addEventListener('click', () => {
-    //     e.target.value = ''
-    // })
 })
+
 
 randomBtn.addEventListener('click',() =>{
     setTimeout(() => {
@@ -30,43 +25,29 @@ randomBtn.addEventListener('click',() =>{
 })
 
 resetBtn.addEventListener('click', () => {
-    // createTags(e.target.value)
-
-    // // e.target.value = '';
-    // // textarea.innerHTML = '';
-    // // tagsEl.innerHTML = '';
-
-    // // textarea.value='';
-
     window.location.reload()
 })
 
-// addBtn.addEventListener('click', () => {
-    
-// })
 function createTags(input) {
+    // input = input.split('.').filter(tag => tag.trim() !== '').map(tag => tag.trim())
+    const tags = [];
 
     addBtn.addEventListener('click', () => {
-
-        // textarea.value='';
+        let i = 1;
 
         const tags = input.split('.').filter(tag => tag.trim() !== '').map(tag => tag.trim())
-        // tagsEl.innerHTML = '';
-
-        // input = input.split(',').filter(tag => tag.trim() !== '').map(tag => tag.trim())
-        // let tagArr = [];
-        // tagArr.push(input.replace(/\n/g, ""));
         
         tagsEl.innerHTML = '<h2 class="h2">Tasks:</h2>';
-        // textarea.value='';
 
-        
         tags.forEach(tag => {
+
             const tagEl = document.createElement('span')
             tagEl.classList.add('tag')
-            tagEl.innerText = tag 
+            tagEl.innerText = (i + '. ') + tag 
             tagsEl.appendChild(tagEl)
+            i++
         })
+        
     })
     
 }
@@ -78,8 +59,7 @@ function randomSelect() {
         const randomTag = pickRandomTag()
 
         highlightTag(randomTag)
-
-
+        
         setTimeout(() => {
             unHighlightTag(randomTag)
         }, 100)
@@ -92,7 +72,6 @@ function randomSelect() {
             const randomTag = pickRandomTag()
 
             highlightTag(randomTag)
-
             completedTask(randomTag)
         }, 100)
 
