@@ -3,8 +3,6 @@
     box-sizing: border-box;
 }
 body{
-    background-color: lightgray;
-    background-color: #f1f1f6;
     background-color: #757D8A;
     font-family: 'Muli', sans-serif;
     align-items: center;
@@ -25,10 +23,9 @@ header .container{
     justify-content: space-between;
     align-items: center;
     height: 100%;
-    width: 90%;
+    width: 85%;
     margin: auto;
     color: #fff;
-    
 }
 header h3{
     font-size: 20px;
@@ -55,10 +52,10 @@ main .container {
 }
 .wrapper{
     padding: 30px;
-    
 }
 .wrapper h1{
-    color: #2141a5;
+    color: #4ECDC4;
+    text-shadow: 2px 2px lightgray;
 }
 .wrapper #complete{
     margin-left: 90px;
@@ -84,7 +81,6 @@ textarea{
     padding-right: 20px;
     padding-top: 8px;
     padding-bottom: 8px;
-    background-color: #4ECDC4;
     background-color: #556270;
     color: #fff;
     border: none;
@@ -116,15 +112,10 @@ textarea{
 }
 
 .tag.highlight{
-    background-color: #273c75;
-    background: -webkit-linear-gradient(to right, #273c75, #273c75);
-    background: linear-gradient(to right, #273c75, #273c75);
-
     background-color: #fff;
     background: -webkit-linear-gradient(to right, #fff, #fff);
     background: linear-gradient(to right, #fff, #fff);
     color: black;
-
 }
 
 .disabled{
