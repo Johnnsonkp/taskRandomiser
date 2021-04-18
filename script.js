@@ -5,17 +5,21 @@ const randomBtn = document.getElementById('random')
 const resetBtn = document.getElementById('reset')
 const addBtn = document.getElementById('add')
 const completeBtn = document.getElementById('complete')
+const hideSpans = document.querySelectorAll('.new-tag')
 
-textarea.focus()
+// textarea.focus()
+let arr = []
+let i = 0;
 
 textarea.addEventListener('keyup', (e) => {
-    createTags(e.target.value)
-    if(e.key === 'Enter'){
-        setTimeout(() => {
-            e.target.value = ''
-        }, 10)
-        randomSelect()
-    }
+
+    hideSpans.forEach((span) => {
+        span.classList.add('display-none')
+    })
+})
+
+addBtn.addEventListener('click', () => {
+    createTags(textarea.value)
 })
 
 
@@ -29,27 +33,23 @@ resetBtn.addEventListener('click', () => {
     window.location.reload()
 })
 
+
 function createTags(input) {
     // input = input.split('.').filter(tag => tag.trim() !== '').map(tag => tag.trim())
-    const tags = [];
+    const tags = input
+    const tagEl = document.createElement('div')
+    tagEl.classList.add('tag')
+    tagEl.classList.add('new-tag')
+    arr.push(tags)
+    tagEl.innerHTML = `
 
-    addBtn.addEventListener('click', () => {
-        let i = 1;
+        <span class="todos">${i + 1}. ${arr[i]}</span>
+    
+    `
+    tagsEl.appendChild(tagEl)
+    i++
 
-        const tags = input.split('.').filter(tag => tag.trim() !== '').map(tag => tag.trim())
-        
-        tagsEl.innerHTML = '<h2 class="h2">Tasks:</h2>';
-
-        tags.forEach(tag => {
-
-            const tagEl = document.createElement('span')
-            tagEl.classList.add('tag')
-            tagEl.innerText = (i + '. ') + tag 
-            tagsEl.appendChild(tagEl)
-            i++
-        })
-        
-    })
+    textarea.value = ''
     
 }
 
@@ -81,6 +81,7 @@ function randomSelect() {
 
 function pickRandomTag() {
     const tags = document.querySelectorAll('.tag')
+    // return tags[Math.floor(Math.random() * tags.length)];
     return tags[Math.floor(Math.random() * tags.length)];
     
 }
@@ -110,6 +111,8 @@ function unHighlightTag(tag) {
     tag.classList.remove('highlight')
 }
 
+
+///////////////////////////////////////////////////////
 function randomFunction(){
     let scope = document.getElementById('next')
 
@@ -129,6 +132,25 @@ function randomFunction(){
     })
 }
 
+
+function anotherRandomFunction(){
+    let scope = document.getElementById('next')
+
+    scope.addEventListener('click', (e) => {
+        textarea.value = ''
+        createTags(e.target.value)
+
+        randomiseTags()
+    })
+
+
+    tags.forEach(tag,(e) => {
+        let arr = []
+
+        arr.push(tag)
+        tagsEl.appendChild(arr)
+    })
+}
 
 function anotherRandomFunction(){
     let scope = document.getElementById('next')
