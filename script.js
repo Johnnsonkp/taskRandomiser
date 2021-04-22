@@ -212,3 +212,117 @@ function anotherRandomFunction(){
         tagsEl.appendChild(arr)
     })
 }
+function randomFunction(){
+    let scope = document.getElementById('next')
+
+    scope.addEventListener('click', (e) => {
+        textarea.value = ''
+        createTags(e.target.value)
+
+        randomiseTags()
+    })
+
+
+    tags.forEach(tag,(e) => {
+        let arr = []
+
+        arr.push(tag)
+        tagsEl.appendChild(arr)
+    })
+}
+
+
+function anotherRandomFunction(){
+    let scope = document.getElementById('next')
+
+    scope.addEventListener('click', (e) => {
+        textarea.value = ''
+        createTags(e.target.value)
+
+        randomiseTags()
+    })
+
+
+    tags.forEach(tag,(e) => {
+        let arr = []
+
+        arr.push(tag)
+        tagsEl.appendChild(arr)
+    })
+}
+
+function anotherRandomFunction(){
+    let scope = document.getElementById('next')
+
+    scope.addEventListener('click', (e) => {
+        textarea.value = ''
+        createTags(e.target.value)
+
+        randomiseTags()
+    })
+
+
+    tags.forEach(tag,(e) => {
+        let arr = []
+
+        arr.push(tag)
+        tagsEl.appendChild(arr)
+    })
+}
+function randomFunction(){
+    let scope = document.getElementById('next')
+
+    scope.addEventListener('click', (e) => {
+        textarea.value = ''
+        createTags(e.target.value)
+
+        randomiseTags()
+    })
+
+
+    tags.forEach(tag,(e) => {
+        let arr = []
+
+        arr.push(tag)
+        tagsEl.appendChild(arr)
+    })
+}
+
+
+function anotherRandomFunction(){
+    let scope = document.getElementById('next')
+
+    scope.addEventListener('click', (e) => {
+        textarea.value = ''
+        createTags(e.target.value)
+
+        randomiseTags()
+    })
+
+
+    tags.forEach(tag,(e) => {
+        let arr = []
+
+        arr.push(tag)
+        tagsEl.appendChild(arr)
+    })
+}
+
+function anotherRandomFunction(){
+    let scope = document.getElementById('next')
+
+    scope.addEventListener('click', (e) => {
+        textarea.value = ''
+        createTags(e.target.value)
+
+        randomiseTags()
+    })
+
+
+    tags.forEach(tag,(e) => {
+        let arr = []
+
+        arr.push(tag)
+        tagsEl.appendChild(arr)
+    })
+}
