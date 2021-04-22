@@ -6,15 +6,15 @@ const resetBtn = document.getElementById('reset')
 const addBtn = document.getElementById('add')
 const completeBtn = document.getElementById('complete')
 const hideSpans = document.querySelectorAll('.new-tag')
+let completeArr = []
 
-// textarea.focus()
 let arr = []
 let i = 0;
 
 textarea.addEventListener('keyup', (e) => {
 
     hideSpans.forEach((span) => {
-        span.classList.add('display-none')
+        span.remove();
     })
 })
 
@@ -35,11 +35,14 @@ resetBtn.addEventListener('click', () => {
 
 
 function createTags(input) {
+    allTaskComplete(input)
+
+    console.log(input)
     // input = input.split('.').filter(tag => tag.trim() !== '').map(tag => tag.trim())
     const tags = input
     const tagEl = document.createElement('div')
     tagEl.classList.add('tag')
-    tagEl.classList.add('new-tag')
+    // tagEl.classList.add('new-tag')
     arr.push(tags)
     tagEl.innerHTML = `
 
@@ -74,16 +77,21 @@ function randomSelect() {
 
             highlightTag(randomTag)
             completedTask(randomTag)
+            
         }, 100)
 
     }, times * 100)
 }
 
 function pickRandomTag() {
-    const tags = document.querySelectorAll('.tag')
-    // return tags[Math.floor(Math.random() * tags.length)];
-    return tags[Math.floor(Math.random() * tags.length)];
     
+    // const tagsArr = []
+    const tags = document.querySelectorAll('.tag')
+    let random = tags[Math.floor(Math.random() * tags.length)];
+
+    if(!completeArr.includes(random)) return random
+    while (completeArr.includes(random)) return pickRandomTag()
+   
 }
 
 
@@ -95,11 +103,30 @@ function indexCheck(input){
     }
 }
 
+let start = Date.now();
+let end = start + 5000;
+
 function completedTask(input) {
     completeBtn.addEventListener('click', () => {
         input.innerHTML=`<del>${input.innerHTML}</del>`;
         input.classList.add('disabled');
 
+        completeArr.push(input)
+        
+        start = Date.now();
+        end = start + 5000;
+
+        function confettiFunc() {
+            start = Date.now(); // Get the date currently
+            /* Your code here */
+            const confetti = document.querySelector('.confetti').classList.remove('display-none')
+            if(start > end) {
+                const confetti = document.querySelector('.confetti').classList.add('display-none')
+                clearInterval(timer); // If we are 5 seconds later clear interval
+            }
+        }
+        const timer = setInterval(confettiFunc, 100);
+        allTaskComplete(input)
     })
 }
 
@@ -111,7 +138,22 @@ function unHighlightTag(tag) {
     tag.classList.remove('highlight')
 }
 
+let taskArr = []
+let counter = []
 
+function allTaskComplete(input) {
+    taskArr.push(input)
+
+    taskArr.forEach((tag) => {
+        if(tag.className === "tag highlight disabled"){
+            counter.push(tag)
+        }
+        if(counter.length === taskArr.length){
+            return alert("All task are completed!! congrats!")
+        }
+    })
+    
+}
 ///////////////////////////////////////////////////////
 function randomFunction(){
     let scope = document.getElementById('next')
