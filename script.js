@@ -35,7 +35,7 @@ resetBtn.addEventListener('click', () => {
 
 
 function createTags(input) {
-    allTaskComplete(input)
+    // allTaskComplete(input)
 
     console.log(input)
     // input = input.split('.').filter(tag => tag.trim() !== '').map(tag => tag.trim())
@@ -105,11 +105,13 @@ function indexCheck(input){
 
 let start = Date.now();
 let end = start + 5000;
+let completeArray = []
 
 function completedTask(input) {
     completeBtn.addEventListener('click', () => {
         input.innerHTML=`<del>${input.innerHTML}</del>`;
         input.classList.add('disabled');
+        completeArray.push(input)
 
         completeArr.push(input)
         
@@ -126,7 +128,7 @@ function completedTask(input) {
             }
         }
         const timer = setInterval(confettiFunc, 100);
-        allTaskComplete(input)
+        allTaskComplete()
     })
 }
 
@@ -141,20 +143,22 @@ function unHighlightTag(tag) {
 let taskArr = []
 let counter = []
 
-function allTaskComplete(input) {
-    taskArr.push(input)
-
-    taskArr.forEach((tag) => {
-        if(tag.className === "tag highlight disabled"){
-            counter.push(tag)
-        }
-        if(counter.length === taskArr.length){
-            return alert("All task are completed!! congrats!")
-        }
-    })
-    
+function allTaskComplete() {
+    if(completeArray.length === arr.length +1){
+        return alert("All task are completed!! congrats!")
+    }
 }
-///////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+/////////////////////////////////////////////////////// Random functions ////////////////////////////
 function randomFunction(){
     let scope = document.getElementById('next')
 
@@ -167,9 +171,9 @@ function randomFunction(){
 
 
     tags.forEach(tag,(e) => {
-        let arr = []
+        let randomArray = []
 
-        arr.push(tag)
+        randomArray.push(tag)
         tagsEl.appendChild(arr)
     })
 }
@@ -187,9 +191,9 @@ function anotherRandomFunction(){
 
 
     tags.forEach(tag,(e) => {
-        let arr = []
+        let randomArray = []
 
-        arr.push(tag)
+        randomArray.push(tag)
         tagsEl.appendChild(arr)
     })
 }
@@ -206,67 +210,10 @@ function anotherRandomFunction(){
 
 
     tags.forEach(tag,(e) => {
-        let arr = []
+        let randomArray = []
 
-        arr.push(tag)
-        tagsEl.appendChild(arr)
-    })
-}
-function randomFunction(){
-    let scope = document.getElementById('next')
-
-    scope.addEventListener('click', (e) => {
-        textarea.value = ''
-        createTags(e.target.value)
-
-        randomiseTags()
-    })
-
-
-    tags.forEach(tag,(e) => {
-        let arr = []
-
-        arr.push(tag)
-        tagsEl.appendChild(arr)
-    })
-}
-
-
-function anotherRandomFunction(){
-    let scope = document.getElementById('next')
-
-    scope.addEventListener('click', (e) => {
-        textarea.value = ''
-        createTags(e.target.value)
-
-        randomiseTags()
-    })
-
-
-    tags.forEach(tag,(e) => {
-        let arr = []
-
-        arr.push(tag)
-        tagsEl.appendChild(arr)
-    })
-}
-
-function anotherRandomFunction(){
-    let scope = document.getElementById('next')
-
-    scope.addEventListener('click', (e) => {
-        textarea.value = ''
-        createTags(e.target.value)
-
-        randomiseTags()
-    })
-
-
-    tags.forEach(tag,(e) => {
-        let arr = []
-
-        arr.push(tag)
-        tagsEl.appendChild(arr)
+        randomArray.push(tag)
+        tagsEl.appendChild(randomArray)
     })
 }
 function randomFunction(){
@@ -281,9 +228,9 @@ function randomFunction(){
 
 
     tags.forEach(tag,(e) => {
-        let arr = []
+        let randomArray = []
 
-        arr.push(tag)
+        randomArray.push(tag)
         tagsEl.appendChild(arr)
     })
 }
@@ -301,9 +248,9 @@ function anotherRandomFunction(){
 
 
     tags.forEach(tag,(e) => {
-        let arr = []
+        let randomArray = []
 
-        arr.push(tag)
+        randomArray.push(tag)
         tagsEl.appendChild(arr)
     })
 }
@@ -320,9 +267,104 @@ function anotherRandomFunction(){
 
 
     tags.forEach(tag,(e) => {
-        let arr = []
+        let randomArray = []
 
-        arr.push(tag)
+        randomArray.push(tag)
+        tagsEl.appendChild(arr)
+    })
+}
+function randomFunction(){
+    let scope = document.getElementById('next')
+
+    scope.addEventListener('click', (e) => {
+        textarea.value = ''
+        createTags(e.target.value)
+
+        randomiseTags()
+    })
+
+
+    tags.forEach(tag,(e) => {
+        let randomArray = []
+
+        randomArray.push(tag)
+        tagsEl.appendChild(arr)
+    })
+}
+
+
+function anotherRandomFunction(){
+    let scope = document.getElementById('next')
+
+    scope.addEventListener('click', (e) => {
+        textarea.value = ''
+        createTags(e.target.value)
+
+        randomiseTags()
+    })
+
+
+    tags.forEach(tag,(e) => {
+        let randomArray = []
+
+        randomArray.push(tag)
+        tagsEl.appendChild(arr)
+    })
+}
+
+function anotherRandomFunction(){
+    let scope = document.getElementById('next')
+
+    scope.addEventListener('click', (e) => {
+        textarea.value = ''
+        createTags(e.target.value)
+
+        randomiseTags()
+    })
+
+
+    tags.forEach(tag,(e) => {
+        let randomArray = []
+
+        randomArray.push(tag)
+        tagsEl.appendChild(arr)
+    })
+}
+
+function anotherRandomFunction(){
+    let scope = document.getElementById('next')
+
+    scope.addEventListener('click', (e) => {
+        textarea.value = ''
+        createTags(e.target.value)
+
+        randomiseTags()
+    })
+
+
+    tags.forEach(tag,(e) => {
+        let randomArray = []
+
+        randomArray.push(tag)
+        tagsEl.appendChild(arr)
+    })
+}
+
+function randomFunction(){
+    let scope = document.getElementById('next')
+
+    scope.addEventListener('click', (e) => {
+        textarea.value = ''
+        createTags(e.target.value)
+
+        randomiseTags()
+    })
+
+
+    tags.forEach(tag,(e) => {
+        let randomArray = []
+
+        randomArray.push(tag)
         tagsEl.appendChild(arr)
     })
 }

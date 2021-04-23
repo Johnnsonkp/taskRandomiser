@@ -48,8 +48,8 @@ main .container {
     display: flex;
     justify-content: space-between;
     border: 1px solid lightgray;
+    border-radius: 15px;
     background-color: #f1f1f6;
-    /* z-index: 0; */
 }
 .wrapper{
     padding: 30px;
@@ -96,6 +96,7 @@ textarea{
     padding-right: 50px;
     flex: 0.85;
     background-color: #556270;
+    border-radius: 15px;
 }
 #tags .h2{
     color: #fff;
